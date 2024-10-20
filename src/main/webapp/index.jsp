@@ -27,7 +27,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Arjun Rayewar's Website!</h1>
+        <h1>Welcome to kayva Website!</h1>
     </header>
     <main>
         <section>
