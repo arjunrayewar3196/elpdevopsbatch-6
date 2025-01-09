@@ -20,23 +20,54 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
-        <!-- Other dependencies can go here -->
+        
+        <!-- JUnit 4 dependency for testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Optional: If you plan to use logging libraries -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.36</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- SonarQube plugin with a compatible version for Java 8 -->
+            <!-- Maven Compiler Plugin for Java Version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            
+            <!-- SonarQube plugin -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.9.0.2155</version> <!-- Compatible with Java 8 -->
+                <version>3.9.0.2155</version>
             </plugin>
-
-            <!-- Additional plugins can go here -->
         </plugins>
     </build>
 
     <properties>
-        <java.version>1.8</java.version> <!-- Java 8 -->
+        <java.version>1.8</java.version> <!-- Specify Java 8 -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 </project>
